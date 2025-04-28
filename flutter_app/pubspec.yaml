@@ -88,6 +88,8 @@ flutter:
     - assets/icons/
 dependencies:
   tflite_flutter: ^0.11.0
+  google_fonts: ^6.2.1
+  flutter_svg: ^2.1.0
 
   # To add assets to your application, add an assets section, like this:
   # assets:
