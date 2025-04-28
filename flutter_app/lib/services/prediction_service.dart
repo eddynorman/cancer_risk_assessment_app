@@ -63,12 +63,13 @@ class PredictionService {
     // Convert answers to a format suitable for your model
     List<double> inputs = _prepareCervicalCancerInputs(questions);
     
-    // Create output tensor
+    // Create output tensor with the correct shape [1, 1] as required by the TFLite model
     var output = List<double>.filled(1, 0).reshape([1, 1]);
     
-    // Run inference
-    _breastCancerInterpreter.run(inputs.reshape([1, inputs.length]), output);
+    // Run inference with the cervical cancer interpreter
+    _cervicalCancerInterpreter.run(inputs.reshape([1, inputs.length]), output);
     
+    print('Cervical cancer model raw output: ${output.flatten()}');
     return output[0][0];
   }
 
@@ -89,6 +90,14 @@ class PredictionService {
     }
     
     return inputs;
+  }
+
+  List<double> standardizeInputs(List<double> inputs, List<double> means, List<double> stds) {
+    List<double> standardized = [];
+    for (int i = 0; i < inputs.length; i++) {
+      standardized.add((inputs[i] - means[i]) / stds[i]);
+    }
+    return standardized;
   }
 
   void dispose() {
