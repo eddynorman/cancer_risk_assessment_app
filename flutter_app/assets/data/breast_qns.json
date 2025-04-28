@@ -1,0 +1,86 @@
+[
+    {
+      "id": 1,
+      "text": "What is your age group (5-year intervals)?",
+      "type": "number",
+      "required": true,
+      "options": [
+        {"value": 1, "label": "20-24 years"},
+        {"value": 2, "label": "25-29 years"},
+        {"value": 3, "label": "30-34 years"},
+        {"value": 4, "label": "35-39 years"},
+        {"value": 5, "label": "40-44 years"},
+        {"value": 6, "label": "45-49 years"},
+        {"value": 7, "label": "50-54 years"},
+        {"value": 8, "label": "55-59 years"},
+        {"value": 9, "label": "60-64 years"},
+        {"value": 10, "label": "65-69 years"},
+        {"value": 11, "label": "70-74 years"},
+        {"value": 12, "label": "75-79 years"},
+        {"value": 13, "label": "80+ years"}
+      ],
+      "field_name": "age_group_5_years"
+    },
+    {
+      "id": 2,
+      "text": "Do you have a first-degree family history of breast cancer?",
+      "type": "boolean",
+      "required": true,
+      "field_name": "first_degree_hx",
+      "true_value": 1.0,
+      "false_value": 0.0
+    },
+    {
+      "id": 3,
+      "text": "At what age did you have your first menstrual period (menarche)?",
+      "type": "number",
+      "required": true,
+      "min": 8,
+      "max": 16,
+      "field_name": "age_menarche"
+    },
+    {
+      "id": 4,
+      "text": "At what age did you have your first child?",
+      "type": "number",
+      "required": true,
+      "min": 15,
+      "max": 45,
+      "field_name": "age_first_birth"
+    },
+    {
+      "id": 5,
+      "text": "Are you currently on hormone replacement therapy (HRT)?",
+      "type": "boolean",
+      "required": true,
+      "field_name": "current_hrt",
+      "true_value": 1.0,
+      "false_value": 0.0
+    },
+    {
+      "id": 6,
+      "text": "What is your menopausal status?",
+      "type": "number",
+      "required": true,
+      "options": [
+        {"value": 1, "label": "Pre-menopausal"},
+        {"value": 2, "label": "Peri-menopausal"},
+        {"value": 3, "label": "Post-menopausal"}
+      ],
+      "field_name": "menopaus"
+    },
+    {
+      "id": 7,
+      "text": "What is your BMI group?",
+      "type": "number",
+      "required": true,
+      "options": [
+        {"value": 1, "label": "Underweight (BMI < 18.5)"},
+        {"value": 2, "label": "Normal (BMI 18.5-24.9)"},
+        {"value": 3, "label": "Overweight (BMI 25-29.9)"},
+        {"value": 4, "label": "Obese (BMI ≥ 30)"}
+      ],
+      "field_name": "bmi_group"
+    }
+  ]
+  

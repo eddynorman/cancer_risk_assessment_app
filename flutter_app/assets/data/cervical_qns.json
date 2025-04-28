@@ -1,0 +1,235 @@
+[
+    {
+      "id": 1,
+      "text": "What is your current age?",
+      "type": "number",
+      "required": true,
+      "field_name": "Age",
+      "hint": "Enter your age in years"
+    },
+    {
+      "id": 2,
+      "text": "How many sexual partners have you had in your lifetime?",
+      "type": "number", 
+      "required": true,
+      "field_name": "Number of sexual partners",
+      "hint": "Enter total number of sexual partners"
+    },
+    {
+      "id": 3,
+      "text": "At what age did you first have sexual intercourse?", 
+      "type": "number",
+      "required": true,
+      "field_name": "First sexual intercourse",
+      "hint": "Enter age of first sexual encounter"
+    },
+    {
+      "id": 4,
+      "text": "How many pregnancies have you experienced?",
+      "type": "number",
+      "required": true,
+      "field_name": "Num of pregnancies", 
+      "hint": "Enter total number of pregnancies"
+    },
+    {
+      "id": 5,
+      "text": "Do you currently smoke?",
+      "type": "boolean",
+      "required": true,
+      "field_name": "Smokes",
+      "true_value": 1.0,
+      "false_value": 0.0
+    },
+    {
+      "id": 6,
+      "text": "How many years have you been smoking?",
+      "type": "number", 
+      "required": false,
+      "field_name": "Smokes (years)",
+      "hint": "Enter total years of smoking history",
+      "default_value": 0.0
+    },
+    {
+      "id": 7,
+      "text": "On average, how many packs of cigarettes do you smoke per year?", 
+      "type": "number",
+      "required": false,
+      "field_name": "Smokes (packs/year)",
+      "hint": "Enter average cigarette consumption",
+      "default_value": 0.0
+    },
+    {
+      "id": 8,
+      "text": "Are you currently using hormonal contraceptives?",
+      "type": "boolean", 
+      "required": true,
+      "field_name": "Hormonal Contraceptives",
+      "true_value": 1.0,
+      "false_value": 0.0
+    },
+    {
+      "id": 9,
+      "text": "How many years have you been using hormonal contraceptives?",
+      "type": "number",
+      "required": false,
+      "field_name": "Hormonal Contraceptives (years)",
+      "hint": "Enter total years of hormonal contraceptive usage",
+      "default_value": 0.0
+    },
+    {
+      "id": 10,
+      "text": "Do you currently have an intrauterine device (IUD)?", 
+      "type": "boolean",
+      "required": true,
+      "field_name": "IUD",
+      "true_value": 1.0,
+      "false_value": 0.0
+    },
+    {
+      "id": 11,
+      "text": "How many years have you been using an IUD?",
+      "type": "number",
+      "required": false,
+      "field_name": "IUD (years)", 
+      "hint": "Enter total years of IUD usage",
+      "default_value": 0.0
+    },
+    {
+      "id": 12,
+      "text": "Have you ever been diagnosed with a sexually transmitted disease (STD)?",
+      "type": "boolean", 
+      "required": true,
+      "field_name": "STDs",
+      "true_value": 1.0,
+      "false_value": 0.0
+    },
+    {
+      "id": 13,
+      "text": "How many different STDs have you been diagnosed with?",
+      "type": "number", 
+      "required": false,
+      "field_name": "STDs (number)",
+      "hint": "Enter total number of STD diagnoses",
+      "default_value": 0.0
+    },
+    {
+      "id": 14,
+      "text": "Have you been diagnosed with condylomatosis?",
+      "type": "boolean",
+      "required": false,
+      "field_name": "STDs:condylomatosis",
+      "true_value": 1.0,
+      "false_value": 0.0,
+      "default_value": 0.0
+    },
+    {
+      "id": 15,
+      "text": "Have you been diagnosed with vaginal condylomatosis?",
+      "type": "boolean", 
+      "required": false,
+      "field_name": "STDs:vaginal condylomatosis",
+      "true_value": 1.0,
+      "false_value": 0.0,
+      "default_value": 0.0
+    },
+    {
+      "id": 16,
+      "text": "Have you been diagnosed with vulvo-perineal condylomatosis?",
+      "type": "boolean", 
+      "required": false,
+      "field_name": "STDs:vulvo-perineal condylomatosis",
+      "true_value": 1.0,
+      "false_value": 0.0,
+      "default_value": 0.0
+    },
+    {
+      "id": 17,
+      "text": "Have you been diagnosed with syphilis?", 
+      "type": "boolean",
+      "required": false,
+      "field_name": "STDs:syphilis",
+      "true_value": 1.0,
+      "false_value": 0.0,
+      "default_value": 0.0
+    },
+    {
+      "id": 18,
+      "text": "Have you been diagnosed with pelvic inflammatory disease?",
+      "type": "boolean", 
+      "required": false,
+      "field_name": "STDs:pelvic inflammatory disease",
+      "true_value": 1.0,
+      "false_value": 0.0,
+      "default_value": 0.0
+    },
+    {
+      "id": 19,
+      "text": "Have you been diagnosed with genital herpes?",
+      "type": "boolean", 
+      "required": false,
+      "field_name": "STDs:genital herpes",
+      "true_value": 1.0,
+      "false_value": 0.0,
+      "default_value": 0.0
+    },
+    {
+      "id": 20,
+      "text": "Have you been diagnosed with molluscum contagiosum?",
+      "type": "boolean", 
+      "required": false,
+      "field_name": "STDs:molluscum contagiosum",
+      "true_value": 1.0,
+      "false_value": 0.0,
+      "default_value": 0.0
+    },
+    {
+      "id": 21,
+      "text": "Have you been diagnosed with HIV?",
+      "type": "boolean", 
+      "required": false,
+      "field_name": "STDs:HIV",
+      "true_value": 1.0,
+      "false_value": 0.0,
+      "default_value": 0.0
+    },
+    {
+      "id": 22,
+      "text": "Have you been diagnosed with Hepatitis B?",
+      "type": "boolean", 
+      "required": false,
+      "field_name": "STDs:Hepatitis B",
+      "true_value": 1.0,
+      "false_value": 0.0,
+      "default_value": 0.0
+    },
+    {
+      "id": 23,
+      "text": "Have you been diagnosed with Human Papillomavirus (HPV)?",
+      "type": "boolean", 
+      "required": false,
+      "field_name": "STDs:HPV",
+      "true_value": 1.0,
+      "false_value": 0.0,
+      "default_value": 0.0
+    },
+    {
+      "id": 24,
+      "text": "How many total STD diagnoses have you received?",
+      "type": "number", 
+      "required": false,
+      "field_name": "STDs: Number of diagnosis",
+      "hint": "Enter total number of STD diagnoses",
+      "default_value": 0.0
+    },
+    {
+      "id": 25,
+      "text": "Have you had a positive biopsy result?",
+      "type": "boolean",
+      "required": false,
+      "field_name": "Biopsy",
+      "true_value": 1.0,
+      "false_value": 0.0,
+      "default_value": 0.0
+    }
+  ]
+  

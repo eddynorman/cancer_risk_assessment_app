@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+myvenv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Flutter
+build/
+.flutter-plugins
+.packages
+pubspec.lock
+.idea/
+*.iml
+*.lock
+
+# OS generated
+.DS_Store
+Thumbs.db
+
