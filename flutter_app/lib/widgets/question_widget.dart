@@ -18,6 +18,21 @@ class _QuestionWidgetState extends State<QuestionWidget> {
   @override
   void initState() {
     super.initState();
+    _initializeTextController();
+  }
+
+  @override
+  void didUpdateWidget(QuestionWidget oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    // Check if we're displaying a different question now
+    if (oldWidget.question.fieldName != widget.question.fieldName) {
+      _initializeTextController();
+    }
+  }
+
+  void _initializeTextController() {
+    _textController.clear(); // Clear first
+    
     // Initialize controller with existing answer if available
     if (widget.question.answer != null && widget.question.type == 'number') {
       _textController.text = widget.question.answer.toString();
