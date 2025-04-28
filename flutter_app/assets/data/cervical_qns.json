@@ -220,16 +220,6 @@
       "field_name": "STDs: Number of diagnosis",
       "hint": "Enter total number of STD diagnoses",
       "default_value": 0.0
-    },
-    {
-      "id": 25,
-      "text": "Have you had a positive biopsy result?",
-      "type": "boolean",
-      "required": false,
-      "field_name": "Biopsy",
-      "true_value": 1.0,
-      "false_value": 0.0,
-      "default_value": 0.0
     }
   ]
   
