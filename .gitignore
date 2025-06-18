@@ -5,6 +5,7 @@ __pycache__/
 *.pyd
 .env
 myvenv/
+fypvenv/
 
 # Jupyter
 .ipynb_checkpoints/

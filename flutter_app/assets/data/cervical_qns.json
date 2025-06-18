@@ -55,8 +55,9 @@
       "type": "number",
       "required": false,
       "field_name": "Smokes (packs/year)",
-      "hint": "Enter average cigarette consumption",
+      "hint": "Estimate packs per year (CPD × years ÷ 20)",
       "default_value": 0.0
+      
     },
     {
       "id": 8,
@@ -210,15 +211,6 @@
       "field_name": "STDs:HPV",
       "true_value": 1.0,
       "false_value": 0.0,
-      "default_value": 0.0
-    },
-    {
-      "id": 24,
-      "text": "How many total STD diagnoses have you received?",
-      "type": "number", 
-      "required": false,
-      "field_name": "STDs: Number of diagnosis",
-      "hint": "Enter total number of STD diagnoses",
       "default_value": 0.0
     }
   ]

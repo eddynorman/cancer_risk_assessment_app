@@ -35,8 +35,11 @@
       "text": "At what age did you have your first menstrual period (menarche)?",
       "type": "number",
       "required": true,
-      "min": 8,
-      "max": 16,
+      "options": [
+        { "value": 0, "label": "Older than 14" },
+        { "value": 1, "label": "12–13 years" },
+        { "value": 2, "label": "Younger than 12" }
+      ],
       "field_name": "age_menarche"
     },
     {
@@ -44,10 +47,16 @@
       "text": "At what age did you have your first child?",
       "type": "number",
       "required": true,
-      "min": 15,
-      "max": 45,
+      "options": [
+        { "value": 0, "label": "< 20 years" },
+        { "value": 1, "label": "20–24" },
+        { "value": 2, "label": "25–29" },
+        { "value": 3, "label": "> 30" },
+        { "value": 4, "label": "No children" }
+      ],
       "field_name": "age_first_birth"
-    },
+    }
+,
     {
       "id": 5,
       "text": "Are you currently on hormone replacement therapy (HRT)?",
