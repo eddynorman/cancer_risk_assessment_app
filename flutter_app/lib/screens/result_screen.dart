@@ -8,33 +8,34 @@ class ResultScreen extends StatelessWidget {
 
   String _getRiskLevel() {
     if (riskScore < 0.3) {
-      return 'Low';
+      return 'Low Risk';
     } else if (riskScore < 0.7) {
-      return 'Moderate';
+      return 'Moderate Risk';
     } else {
-      return 'High';
+      return 'High Risk';
     }
   }
 
   Color _getRiskColor() {
     if (riskScore < 0.3) {
-      return Colors.green;
+      return Colors.blue; // More distinct and accessible than green
     } else if (riskScore < 0.7) {
-      return Colors.orange;
+      return Colors.orange; // Moderate and noticeable
     } else {
-      return Colors.red;
+      return Colors.red; // High urgency
     }
   }
 
   String _getRecommendation() {
     if (riskScore < 0.3) {
-      return 'Continue with regular screenings as recommended by your healthcare provider.';
+      return 'The $cancerType risk is currently low. Encourage continued awareness and general health maintenance. No immediate follow-up required unless symptoms appear.';
     } else if (riskScore < 0.7) {
-      return 'Consider discussing your risk factors with your healthcare provider and possibly increasing screening frequency.';
+      return 'The $cancerType risk is moderate. Discuss risk factors with the patient. If possible, schedule a follow-up in 3–6 months or recommend local clinical assessment.';
     } else {
-      return 'Please consult with your healthcare provider as soon as possible to discuss your risk factors and develop a monitoring plan.';
+      return 'The $cancerType risk is high. Strongly advise referral to the nearest available facility for diagnostic evaluation. Early intervention is crucial.';
     }
   }
+
 
   @override
   Widget build(BuildContext context) {
