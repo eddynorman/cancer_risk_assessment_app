@@ -105,7 +105,7 @@ class _QuestionWidgetState extends State<QuestionWidget> {
 
   Widget _buildBooleanWidget() {
     // Use the true/false values from the question if available
-    dynamic trueValue = widget.question.trueValue ?? true;
+    dynamic trueValue = widget.question.trueValue ?? 1.0;
     dynamic falseValue = widget.question.falseValue ?? false;
     
     return Row(

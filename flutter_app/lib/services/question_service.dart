@@ -20,6 +20,7 @@ class QuestionService {
     Map<String, dynamic> modelInput = {};
     
     for (var question in questions) {
+      print('Processing question: ${question.fieldName} andd answer: ${question.answer}');
       // Skip questions without answers
       if (question.answer == null) {
         // Use default value if available

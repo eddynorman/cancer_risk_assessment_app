@@ -197,11 +197,11 @@
       "id": 22,
       "text": "Have you been diagnosed with Hepatitis B?",
       "type": "boolean", 
-      "required": false,
+      "required": true,
       "field_name": "STDs:Hepatitis B",
       "true_value": 1.0,
-      "false_value": 0.0,
-      "default_value": 0.0
+      "false_value": 0.0
+      
     },
     {
       "id": 23,
