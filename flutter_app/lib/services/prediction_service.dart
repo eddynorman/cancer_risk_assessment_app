@@ -16,13 +16,11 @@ class PredictionService {
       _breastCancerInterpreter = await Interpreter.fromAsset(
         'assets/models/breast_cancer_model.tflite',
       );
-      // Uncomment when you have the cervical cancer model
       _cervicalCancerInterpreter = await Interpreter.fromAsset(
         'assets/models/cervical_cancer_model.tflite',
       );
       _initialized = true;
     } catch (e) {
-      print('Error loading model: $e');
       rethrow;
     }
   }
@@ -30,7 +28,7 @@ class PredictionService {
   Future<double> predictBreastCancerRisk(List<Question> questions) async {
     await initialize();
 
-    // Convert answers to a format suitable for your model
+    // Converting answers to a format suitable for our model
     List<double> inputs = _prepareBreastCancerInputs(questions);
 
     List<double> means = [
@@ -52,17 +50,10 @@ class PredictionService {
       0.5026307176694195,
       1.04315052792765,
     ];
-    print('Raw inputs before standardization: $inputs');
 
     // Only standardize if we have the correct number of parameters
     if (means.length == inputs.length && stds.length == inputs.length) {
       inputs = standardizeInputs(inputs, means, stds);
-      print('Standardized inputs: $inputs');
-    } else {
-      print('Warning: Standardization skipped - mismatched dimensions');
-      print(
-        'Input length: ${inputs.length}, means length: ${means.length}, stds length: ${stds.length}',
-      );
     }
 
     // Create output tensor
@@ -70,7 +61,6 @@ class PredictionService {
 
     // Run inference
     _breastCancerInterpreter.run(inputs.reshape([1, inputs.length]), output);
-    print('breast cancer model raw output: ${output[0][0]}');
 
     return output[0][0];
   }
@@ -80,15 +70,12 @@ class PredictionService {
 
     for (var question in questions) {
       if (question.type == 'boolean') {
-        print('Boolean answer: ${question.answer}');
         inputs.add(
           question.answer == true || question.answer == 1.0 ? 1.0 : 0.0,
         );
       } else if (question.type == 'number') {
         inputs.add(double.tryParse(question.answer.toString()) ?? 0.0);
       } else if (question.type == 'string' && question.options != null) {
-        // Convert string options to one-hot encoding or numerical values
-        // This depends on how your model expects the data
         final index = question.options!.indexOf(question.answer);
         inputs.add(index.toDouble());
       }
@@ -97,7 +84,6 @@ class PredictionService {
     return inputs;
   }
 
-  // Similar method for cervical cancer prediction
   Future<double> predictCervicalCancerRisk(List<Question> questions) async {
     await initialize();
 
@@ -119,7 +105,6 @@ class PredictionService {
       3.641969156693785, 0.3004830676921188, 1.8447483441615602, 0.29394009826435147, 
       0.538270148873986
     ];
-    print('Raw inputs before standardization: $inputs');
     // Step 1: Extract continuous inputs (0–12)
     List<double> continuousInputs = inputs.sublist(0, 13);
 
@@ -133,14 +118,7 @@ class PredictionService {
         means,
         stds,
       );
-      print('Standardized inputs: $standardizedContinuous');
-    } else {
-      print('Warning: Standardization skipped - mismatched dimensions');
-      print(
-        'Input length: ${continuousInputs.length}, means length: ${means.length}, stds length: ${stds.length}',
-      );
-    }
-
+    } 
     // Step 3: Get binary inputs (13–22)
     List<double> binaryInputs = inputs.sublist(13, 23);
 
@@ -153,8 +131,6 @@ class PredictionService {
     // Run inference
     _cervicalCancerInterpreter.run(finalInputs.reshape([1, finalInputs.length]), output);
 
-    print('Cervical cancer model raw output: ${output[0][0]}');
-
     // If your model outputs a probability directly (0-1), convert to percentage
     // If it outputs logits, apply sigmoid first
     double probability;
@@ -164,10 +140,8 @@ class PredictionService {
     // If output can be outside 0-1, it might be a logit needing sigmoid
     if (output[0][0] < 0 || output[0][0] > 1) {
       probability = _sigmoid(output[0][0]);
-      print('Applied sigmoid, probability: $probability');
     } else {
       probability = output[0][0];
-      print('Direct probability: $probability');
     }
 
     return probability;
@@ -178,7 +152,6 @@ class PredictionService {
 
     for (var question in questions) {
       if (question.type == 'boolean') {
-        print('Boolean answer: ${question.answer}');
         inputs.add(
           question.answer == true || question.answer == 1.0 ? 1.0 : 0.0,
         );

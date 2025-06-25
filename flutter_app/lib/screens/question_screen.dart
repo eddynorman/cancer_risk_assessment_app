@@ -39,7 +39,6 @@ class _QuestionScreenState extends State<QuestionScreen> {
         _isLoading = false;
       });
     } catch (e) {
-      print('Error loading questions: $e');
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('Failed to load questions. Please try again.')),
       );
@@ -84,7 +83,6 @@ class _QuestionScreenState extends State<QuestionScreen> {
         ),
       );
     } catch (e) {
-      print('Error predicting risk: $e');
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('Failed to calculate risk. Please try again.')),
       );
